@@ -1,0 +1,5 @@
+CREATE TABLE moons(
+id SERIAL PRIMARY KEY,
+name VARCHAR(50) NOT NULL,
+orbits_around_planet VARCHAR(50) NOT NULL,
+moon_id NOT NULL REFERENCES planets);
