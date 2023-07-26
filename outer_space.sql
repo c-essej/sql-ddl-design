@@ -51,7 +51,12 @@ VALUES
 
 
 
+ALTER TABLE planets RENAME COLUMN name TO planet;
 
-
+SELECT planet, orbits_around_star AS star, COUNT(moon)
+  FROM planets
+    LEFT OUTER JOIN moons
+      ON planets.id = moons.planet_id
+      GROUP BY planets.id, moons.moon;
 
 
